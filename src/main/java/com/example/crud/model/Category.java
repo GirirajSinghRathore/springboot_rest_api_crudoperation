@@ -21,7 +21,9 @@ public class Category {
 
 	@Column(name = "name")
 	private String name;
-
+	@OneToMany(mappedBy = "category", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
+		      CascadeType.REFRESH })
+		    private List<Product> product;
 	public Category(long id, String name) {
 		super();
 		this.id = id;

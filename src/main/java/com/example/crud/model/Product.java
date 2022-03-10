@@ -27,7 +27,7 @@ public class Product {
 	private String productName;
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name = "category_id", nullable = false)
+	@JoinColumn(name = "id", nullable = false, insertable = false, updatable = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JsonIgnore
 	private Category category;

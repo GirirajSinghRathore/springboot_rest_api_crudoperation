@@ -33,7 +33,7 @@ public class CategoryController {
 	@PutMapping("/category/{id}")
 	public ResponseEntity<Category> updateCategory(@PathVariable("id") long id, @RequestBody Category category) {
 		Category categoryNew = categoryService.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Not found Tutorial with id = " + id));
+				.orElseThrow(() -> new ResourceNotFoundException("Not found Category with id = " + id));
 
 		categoryNew.setName(category.getName());
 
